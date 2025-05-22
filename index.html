@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmy Cine Time - Download Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: purple;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Saare content blocks ko center mein rakhega */
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .site-header {
+            text-align: center;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 800px; /* Content ki max width */
+        }
+
+        #site-name {
+            font-size: 2.8em;
+            margin: 0;
+            color: #FFD700; /* Gold color for site name */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .content-block {
+            width: 100%;
+            max-width: 750px; /* Max width for ad blocks, thoda chhota header se */
+            margin-bottom: 25px;
+            text-align: center; /* Messages ko center karega */
+            padding: 15px;
+            background-color: rgba(0,0,0,0.1); /* Har block ke liye halka background */
+            border-radius: 8px;
+        }
+
+        .ad-accompanying-message {
+            font-size: 0.95em;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .ad-slot {
+            background-color: rgba(255, 255, 255, 0.05); /* Ad ke liye halka background */
+            border: 1px dashed rgba(255, 255, 255, 0.4);
+            padding: 10px;
+            display: flex; /* Ad content ko center karne mein madad karega */
+            justify-content: center;
+            align-items: center;
+            min-height: 50px; /* Default min height, ad script override kar sakta hai */
+            /* Ad scripts apne dimensions khud define karenge */
+            /* overflow: hidden; /* Uncomment if ads are overflowing badly */
+        }
+
+        /* Specific styling for the middle section containing timer and button */
+        .middle-section-timer-button {
+            text-align: center;
+            margin-top: 20px; /* Ad slot 3 ke neeche thoda space */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.25); /* Thoda darker background */
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px; /* Timer section ki width */
+            margin-left: auto; /* Center the timer section within its parent */
+            margin-right: auto;
+        }
+
+        #wait-message {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        #countdown-timer {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #FFD700; /* Gold color for timer */
+            margin-bottom: 20px;
+        }
+
+        #button-container {
+            margin-top: 20px;
+        }
+
+        .dynamic-button {
+            background-color: red;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            display: none; /* Initially hidden */
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .dynamic-button:hover {
+            background-color: darkred;
+            box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            #site-name {
+                font-size: 2em;
+            }
+            .content-block {
+                padding: 10px;
+            }
+            .middle-section-timer-button {
+                padding: 15px;
+            }
+             #wait-message {
+                font-size: 1em;
+            }
+            #countdown-timer {
+                font-size: 2em;
+            }
+            .dynamic-button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <h1 id="site-name">Filmy Cine Time</h1>
+    </header>
+
+    <!-- Ad Block 1 -->
+    <div class="content-block">
+        <p class="ad-accompanying-message">Best of luck</p>
+        <div class="ad-slot" id="ad-slot-1">
+            <script async="async" data-cfasync="false" src="//pl26679166.profitableratecpm.com/209f41eac15d1eacecadb656854af497/invoke.js"></script>
+            <div id="container-209f41eac15d1eacecadb656854af497"></div>
+        </div>
+    </div>
+
+    <!-- Ad Block 2 -->
+    <div class="content-block">
+        <p class="ad-accompanying-message">For your downloads</p>
+        <div class="ad-slot" id="ad-slot-2">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '374d428da381c7ef3c5b425d6ecb63cb',
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/374d428da381c7ef3c5b425d6ecb63cb/invoke.js"></script>
+        </div>
+    </div>
+
+    <!-- Ad Block 3 (with Timer and Button below it) -->
+    <div class="content-block">
+        <div class="ad-slot" id="ad-slot-3">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '2e3b06efedb57a2cf8338294eb132644',
+                    'format' : 'iframe',
+                    'height' : 300,
+                    'width' : 160,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/2e3b06efedb57a2cf8338294eb132644/invoke.js"></script>
+        </div>
+        <!-- Timer and Button Section -->
+        <div class="middle-section-timer-button">
+            <p id="wait-message">Wait for 15 seconds to get your Download Link</p>
+            <div id="countdown-timer">15</div>
+            <div id="button-container">
+                <!-- Button will be injected here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Ad Block 4 -->
+    <div class="content-block">
+        <p class="ad-accompanying-message">Have a nice day</p>
+        <div class="ad-slot" id="ad-slot-4">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '01c9af1532b509e005bf16b2aad3a46b',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/01c9af1532b509e005bf16b2aad3a46b/invoke.js"></script>
+        </div>
+    </div>
+
+    <!-- Ad Block 5 -->
+    <div class="content-block">
+        <!-- No message specified for ad 5 in diagram -->
+        <div class="ad-slot" id="ad-slot-5">
+            <script type='text/javascript' src='//pl26679185.profitableratecpm.com/7d/04/2b/7d042b6adae192ba710511c3c8a5447b.js'></script>
+        </div>
+    </div>
+
+    <script>
+        // IMPORTANT: Har roz yeh link yahan change karein!
+        // Maine aapka pehle wala test link yahan daal diya hai. Aap isko badal sakte hain.
+        const DAILY_DOWNLOAD_LINK = "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.meesho.com/%3Fsrsltid%3DAfmBOoqNw3kjHjB7tMtyIf3iQJirSlt_T3Y_-xA17d57mu_ZjQGYnMvQ&ved=2ahUKEwjy14fOlK-NAxULzTgGHZxBAg4QFnoECA0QAQ&sqi=2&usg=AOvVaw2k0RZty7gPI_66obuZtMol";
+
+        let timeLeft = 15;
+        const countdownTimerElement = document.getElementById('countdown-timer');
+        const waitMessageElement = document.getElementById('wait-message');
+        const buttonContainerElement = document.getElementById('button-container');
+
+        function startCountdown() {
+            if (!countdownTimerElement || !waitMessageElement || !buttonContainerElement) {
+                console.error("Timer elements not found!");
+                return;
+            }
+            countdownTimerElement.textContent = timeLeft;
+            const timerInterval = setInterval(() => {
+                timeLeft--;
+                if (timeLeft >= 0) {
+                    countdownTimerElement.textContent = timeLeft;
+                } else {
+                    clearInterval(timerInterval);
+                    countdownTimerElement.style.display = 'none'; 
+                    waitMessageElement.style.display = 'none'; 
+                    createContinueButton();
+                }
+            }, 1000);
+        }
+
+        function createContinueButton() {
+            const button = document.createElement('a'); 
+            button.href = DAILY_DOWNLOAD_LINK;
+            button.textContent = "Tab to Continue"; // Aapke diagram mein "Continue Button" likha tha, maine "Tab to Continue" rakha hai, aap badal sakte hain.
+            button.className = "dynamic-button";
+            button.target = "_blank"; 
+            button.style.display = 'inline-block'; 
+            
+            buttonContainerElement.appendChild(button);
+        }
+
+        // Start the countdown when the page loads
+        window.onload = startCountdown;
+    </script>
+
+</body>
+</html>
